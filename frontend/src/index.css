@@ -5,11 +5,11 @@
 @theme {
     /* colors: */
       --color-base:#404040;
-      --color-baseLight:#404040;
+      --color-baseLight:#FFFFEB;
       --color-bg:#F9F4F4;
       --color-main: #95C50B;
       --color-accentB: #069BD5;
-      --color-accentY: #069BD5;
+      --color-accentY: #EFEE91;
       
     }
     
@@ -24,7 +24,7 @@
       font-family: Concert;
       font-style: normal;
       font-weight: 200 700;
-      src: url("/public//fonts/ConcertOne-Regular.ttf") format("woff2");
+      src: url("/fonts/ConcertOne-Regular.ttf") format("woff2");
     }
    
 
