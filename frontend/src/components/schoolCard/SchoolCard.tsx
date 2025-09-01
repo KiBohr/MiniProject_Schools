@@ -1,17 +1,38 @@
+import { useState } from "react";
 import type { ISchool } from "../../contract/interfaces/Interfaces";
 
 
 const SchoolCard = ({id, name, address, city, image} :ISchool) => {
+
+    const [bookmarked, setBookmarked] = useState(false);
    
     return ( 
         <div
         key={id}
-        className="bg-accentB/20 py-5 rounded-md flex flex-col items-center justify-center cursor-pointer hover:scale-x-105 transition-all duration-300 hover:shadow-xl">
+        className="bg-accentB/20 pb-2 rounded-md flex flex-col items-center justify-center cursor-pointer hover:scale-x-105 transition-all duration-300 hover:shadow-xl w-[90%] mb-5 relative">
+
+            <button
+            className="absolute top-2 right-1 z-10 cursor-pointer hover:drop-shadow-2xl"
+            onClick={() => setBookmarked((b) =>!b)}
+            aria-label="Bookmark"
+            type="button"
+            >
+                {bookmarked ?(
+                    <svg  width="41" height="30" viewBox="0 0 41 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 16.1285C3 9.93968 3 6.84526 4.92263 4.92263C6.84526 3 9.93968 3 16.1285 3H24.8809C31.0697 3 34.1642 3 36.0868 4.92263C38.0094 6.84526 38.0094 9.93968 38.0094 16.1285V31.0679C38.0094 36.9392 38.0094 39.8749 36.162 40.7728C34.3146 41.6707 32.0063 39.857 27.3896 36.2296L25.9121 35.0687C23.3162 33.029 22.0183 32.0092 20.5047 32.0092C18.9912 32.0092 17.6932 33.029 15.0973 35.0687L13.6198 36.2296C9.00312 39.857 6.69478 41.6707 4.84739 40.7728C3 39.8749 3 36.9392 3 31.0679V16.1285Z" fill="#EFEE91" stroke="#EFEE91" stroke-width="4.37618"/>
+                    </svg>
+                ) : (
+                    <svg width="41" height="30" viewBox="0 0 41 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 16.1285C3 9.93968 3 6.84526 4.92263 4.92263C6.84526 3 9.93968 3 16.1285 3H24.8809C31.0697 3 34.1642 3 36.0868 4.92263C38.0094 6.84526 38.0094 9.93968 38.0094 16.1285V31.0679C38.0094 36.9392 38.0094 39.8749 36.162 40.7728C34.3146 41.6707 32.0063 39.857 27.3896 36.2296L25.9121 35.0687C23.3162 33.029 22.0183 32.0092 20.5047 32.0092C18.9912 32.0092 17.6932 33.029 15.0973 35.0687L13.6198 36.2296C9.00312 39.857 6.69478 41.6707 4.84739 40.7728C3 39.8749 3 36.9392 3 31.0679V16.1285Z" stroke="#EFEE91" stroke-width="4.37618"/>
+                    </svg>
+                )}
+            </button>
+
             <img 
             src={image} 
             alt={`picture of ${name}`}
-            className="bg-white w-full h-auto rounded-t-md object-cover" />
-            <h2 className="font-medium">{name}</h2>
+            className="bg-white  rounded-t-md object-cover aspect-square w-full" />
+            <h2 className="font-medium text-xl text-center">{name}</h2>
             <p>{address}</p>
             <p>{city}</p>
         </div>

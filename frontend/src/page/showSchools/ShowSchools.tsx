@@ -31,7 +31,7 @@ const ShowSchools = () => {
         <section className="flex flex-col items-center justify-center gap-5 px-5">
             <h1 className="text-4xl md:text-5xl text-center font-bold mb-10">Explore Schools in Germany</h1>
 
-            <div  className="grid gap-5 w-full md:grid-cols-3">
+            <div  className="grid gap-5 w-full place-items-center md:grid-cols-3">
                 {schools.map((school) => {
                     console.log({school})
                     return (
@@ -44,12 +44,6 @@ const ShowSchools = () => {
                         );
                 })}
             </div>
-
-            
-                 
-            
-
-           
         </section>
 
        
