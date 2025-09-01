@@ -16,7 +16,7 @@ const ShowSchools = () => {
             setError(null);
         })
         .catch(error => {
-            setError('Failed to fetch schools');
+            setError('Schools are loading...');
             console.error('Error fetching schools:', error);
         })
         .finally(() => {
