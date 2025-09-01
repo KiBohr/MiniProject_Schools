@@ -32,3 +32,4 @@ out
 # Optional - IDE/editor folders
 .vscode/
 .idea/
+.vercel
